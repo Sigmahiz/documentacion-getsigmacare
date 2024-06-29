@@ -1,0 +1,93 @@
+**Para realizar la puesta en producción del backend, se requiere:**
+
+ - Sistema operativo Ubuntu de preferencia
+ - Node con la versión LTS (El sistema actualmente con la versión 20)
+	 - Para instalar NVM en ubuntu y configurar una versión de node puedes utilizar el siguiente comando:
+		 - Descargar e instalar NVM:`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash`
+		 - Luego cargar en el terminal: ```source ~/.bashrc```
+		 - Instalar y usar LTS versión:
+			 - ```nvm install --lts```
+			 - ```nvm use --lts```
+	 - Instalar PNPM, ```npm install -g pnpm```
+	 - Instalar GIT y clonar el repositorio https://github.com/Sigmahiz/sigma-back.git
+	 - Ejecutar `pnpm i` para instalar las dependencias
+	 - Instalar pm2, con `pnpm install:pm2` o `npm install -g pm2`
+	 - Establecer en tu `.env.{entorno}` la configuración de base de datos y JWT, en el .env.example se puede encontrar más información
+	 - Ejecutar `pnpm sigma-lite:migrate:{entorno}` para tener generar los schemas de base datos y generar las tablas en la base datos.
+	 - Ejecutar `pnpm sigma-lite:seed:{entorno}`, para generar datos de prueba si es requerido (opcional)
+	 - Ejecutar `pnpm sigma-lite:{entorno}` para verificar que no existan errores de compilación
+	 - Si el sistema funciona con normalidad ejecutar `pnpm start:sigma-backend` para añadirlo a la instancia de pm2,
+
+
+## Dependencias
+-   "@apollo/server": Librería para implementar un servidor Apollo GraphQL.
+-   "@nestjs/apollo": Integración de Apollo GraphQL para NestJS.
+-   "@nestjs/common": Módulos y utilidades comunes para NestJS.
+-   "@nestjs/core": Componente principal de NestJS que gestiona la aplicación.
+-   "@nestjs/graphql": Integración de GraphQL para NestJS.
+-   "@nestjs/jwt": Integración de JWT (JSON Web Tokens) para NestJS.
+-   "@nestjs/passport": Integración de Passport para NestJS, un middleware de autenticación.
+-   "@nestjs/platform-express": Integración de Express para NestJS.
+-   "@nestjs/platform-fastify": Integración de Fastify para NestJS.
+-   "@nestjs/swagger": Integración de Swagger para NestJS, que genera documentación de API.
+-   "@prisma/client": Cliente de Prisma para interactuar con la base de datos.
+-   "@types/express": Definiciones de tipos para Express.
+-   "apollo-server-express": Integración de Apollo Server con Express.
+-   "axios": Cliente HTTP para Node.js.
+-   "bcrypt": Librería para el hashing seguro de contraseñas.
+-   "cache-manager": Gestión de la caché en Node.js.
+-   "class-transformer": Biblioteca para la transformación de objetos.
+-   "class-validator": Biblioteca para la validación de objetos.
+-   "crypto-js": Librería para el cifrado y descifrado de datos.
+-   "date-fns": Biblioteca para manipulación y formateo de fechas.
+-   "dotenv": Carga variables de entorno desde un archivo  `.env`.
+-   "dotenv-cli": Herramienta de línea de comandos para cargar variables de entorno desde un archivo  `.env`.
+-   "exceljs": Biblioteca para la generación de archivos Excel.
+-   "express": Framework web para Node.js.
+-   "fastify-static": Plugin para servir archivos estáticos con Fastify.
+-   "graphql": Biblioteca para construir y ejecutar esquemas de GraphQL.
+-   "ioredis": Cliente de Redis para Node.js.
+-   "moment": Biblioteca para manipulación y formateo de fechas.
+-   "multer": Middleware para el manejo de formularios multipart en Node.js.
+-   "nodemailer": Biblioteca para el envío de correos electrónicos desde Node.js.
+-   "passport": Middleware de autenticación para Node.js.
+-   "passport-jwt": Estrategia de autenticación JWT (JSON Web Tokens) para Passport.
+-   "passport-local": Estrategia de autenticación local para Passport.
+-   "prisma": ORM (Object-Relational Mapping) y herramienta de modelado y migración de base de datos.
+-   "redis": Cliente de Redis para Node.js.
+-   "reflect-metadata": Polyfill para el soporte de  `Reflect.metadata`.
+-   "rxjs": Biblioteca para programación reactiva.
+-   "swagger-ui-express": Middleware para mostrar la documentación de Swagger en Express.
+-   "tslib": Biblioteca de soporte de TypeScript.
+-   "yup": Biblioteca para la validación de esquemas.
+
+## DevDependencies (dependencias de desarrollo):
+
+-   "@nestjs/schematics": Generador de esquemas para NestJS.
+-   "@nestjs/testing": Herramientas para pruebas unitarias y de integración en NestJS.
+-   "@nx/eslint": Configuración de ESLint para proyectos Nx.
+-   "@nx/eslint-plugin": Plugin de ESLint para proyectos Nx.
+-   "@nx/jest": Configuración de Jest para proyectos Nx.
+-   "@nx/js": Conjunto de herramientas JavaScript para proyectos Nx.
+-   "@nx/nest": Conjunto de herramientas NestJS para proyectos Nx.
+-   "@nx/node": Conjunto de herramientas Node.js para proyectos Nx.
+-   "@nx/webpack": Conjunto de herramientas Webpack para proyectos Nx.
+-   "@nx/workspace": Conjunto de herramientas de espacio de trabajo para proyectos Nx.
+-   "@swc-node/register": Compilador de JavaScript y TypeScript para Node.js.
+-   "@swc/core": Compilador de JavaScript y TypeScript.
+-   "@types/jest": Definiciones de tipos para Jest.
+-   "@types/multer": Definiciones de tipos para Multer.
+-   "@types/node": Definiciones de tipos para Node.js.
+-   "@types/passport-jwt": Definiciones de tipos para Passport JWT.
+-   "@types/passport-local": Definiciones de tipos para Passport Local.
+-   "@typescript-eslint/eslint-plugin": Plugin de ESLint para TypeScript.
+-   "@typescript-eslint/parser": Parser de ESLint para TypeScript.
+-   "eslint": Herramienta de linting para JavaScript y TypeScript.
+-   "eslint-config-prettier": Configuración de ESLint para integrarlo con Prettier.
+-   "jest": Framework de pruebas unitarias para JavaScript y TypeScript.
+-   "jest-environment-node": Entorno de ejecución de Jest para Node.js.
+-   "nx": Herramienta de desarrollo para proyectos monorepo.
+-   "prettier": Formateador de código.
+-   "ts-jest": Transformador de TypeScript para Jest.
+-   "ts-node": Ejecutor de TypeScript en tiempo de ejecución.
+-   "typescript": Lenguaje de programación TypeScript.
